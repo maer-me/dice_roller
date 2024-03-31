@@ -9,6 +9,10 @@ features.
 - ~~Main dice logic in place, should allow the user to roll any conceivable dice
 and also create dice-sets of multiple identical dies.~~
 - Fully functional graphical user interface. Most likely web based.
+-- Add the ability to create dies using a form.
+-- Add the ability to create sets with different dies.
+-- Dark and light theme.
+-- Add graphics
 - Add the ability to track outcomes of roles to a singular stat. Example,
 the party has 5 food and forages, a successful roll increases the food supply
 by 1.
