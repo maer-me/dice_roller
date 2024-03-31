@@ -8,6 +8,7 @@ features.
 ## Road map
 - ~~Main dice logic in place, should allow the user to roll any conceivable dice
 and also create dice-sets of multiple identical dies.~~
+- Early versions will run with a CLI interface.
 - Fully functional graphical user interface. Most likely web based.
   - Add the ability to create dies using a form.
   - Add the ability to create sets with different dies.
