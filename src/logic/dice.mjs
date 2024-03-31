@@ -34,6 +34,7 @@ export function createDice(sides) {
        * @returns {number} - The outcome of the roll with the modifier.
        */
   function roll(modifier = 0) {
+    //TODO: Add check for natural fail/success
     return Math.floor(Math.random() * sides) + 1 + modifier;
   }
 
