@@ -9,16 +9,16 @@
  * @author Mattias Eriksson
  */
 export function createSet(name = "", numDice, sides) {
-  const set = {
-    "name": name,
-    "set": []
-  };
+  const set = [];
 
   for (let i = 0; i < numDice; i++) {
     const dice = createDice(sides);
-    set.set.push(dice);
+    set.push(dice);
   };
-  return set;
+  return {
+    "name": name,
+    "set": set
+  };
 };
 
 /**
