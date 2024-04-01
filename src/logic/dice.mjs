@@ -35,7 +35,7 @@ export function createDice(sides) {
        */
   function roll(modifier = 0) {
     //TODO: Add check for natural fail/success
-    return Math.floor(Math.random() * sides) + 1 + modifier;
+    return Math.floor(Math.random() * sides) + 1 + parseInt(modifier);
   }
 
   return {
@@ -54,5 +54,5 @@ export function createDice(sides) {
 
 export function rollDice(sides, modifier = 0) {
   //TODO: Add check for natural fail/success
-  return Math.floor(Math.random() * sides) + 1 + modifier;
+  return Math.floor(Math.random() * sides) + 1 + parseInt(modifier);
 };

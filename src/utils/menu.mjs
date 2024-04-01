@@ -12,13 +12,10 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-export function startMenu() {
-  drawMainMenu();
-};
-
 /**
  * Draws the main menu of the Dice Roller program.
  * Displays available options for the user to choose from.
+ * Prompts user for input and calls handler function.
  * @returns {void}
  * @author Mattias Eriksson
  */
@@ -36,9 +33,16 @@ function drawMainMenu() {
   });
 };
 
-function diceRoll(sides) {
-  if (Number.isInteger(parseInt(sides)) && parseInt(sides) > 0) {
-    return rollDice(sides);
+
+/**
+ * Rolls a dice with the specified number of sides by calling the rollDice function.
+ * @param {string} sides - The number of sides for the dice.
+ * @returns {number|string} - The outcome of the dice roll, or an error message if the input is invalid.
+ */
+function diceRoll(sides, modifier = 0) {
+  if (Number.isInteger(parseInt(sides)) && parseInt(sides) > 0
+    && Number.isInteger(parseInt(modifier))) {
+    return rollDice(sides, modifier);
   } else {
     return `Number of sides must be a positive integer`;
   };
@@ -65,6 +69,18 @@ function handleMenuChoice(choice) {
       break;
     case '2':
       //TODO: create dice roller with modifier
+      rl.question(`Enter number of sides: `, (input) => {
+        const sides = input;
+        rl.question(`Enter modifier: `, (input) => {
+          const modifier = input;
+          const result = rollDice(sides, modifier);
+          console.log(`Result: ${result}`);
+          rl.question(`Press any key to continue...`, (input) => {
+            clear();
+            drawMainMenu();
+          });
+        });
+      });
       break;
     case '3':
       //TODO: create set creator function 
@@ -74,7 +90,9 @@ function handleMenuChoice(choice) {
       break;
     case 'X':
     case 'x':
-    //TODO: exit program
+      //TODO: exit program
+      console.log(`Exiting program, see you again!`);
+      process.exit(0);
     default:
       console.log('Invalid choice, please select a valid option.');
   };

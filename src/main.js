@@ -1,4 +1,4 @@
 "use strict";
-import { menuRun, startMenu } from "./utils/menu.mjs";
+import { menuRun, } from "./utils/menu.mjs";
 
 menuRun();
