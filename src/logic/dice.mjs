@@ -45,11 +45,12 @@ export function createDice(sides) {
 }
 
 /**
-      * Rolls the dice with an optional modifier and returns the outcome.
-      * @param {number} [modifier=0] - The modifier to be added to the roll result (optional, defaults to 0).
-      * @returns {number} - The outcome of the roll with the modifier.
-      * @author Mattias Eriksson
-      */
+  * Rolls the dice with an optional modifier and returns the outcome.
+  * 
+  * @param {number} [modifier=0] - The modifier to be added to the roll result (optional, defaults to 0).
+  * @returns {number} - The outcome of the roll with the modifier.
+  * @author Mattias Eriksson
+  */
 
 export function rollDice(sides, modifier = 0) {
   //TODO: Add check for natural fail/success
